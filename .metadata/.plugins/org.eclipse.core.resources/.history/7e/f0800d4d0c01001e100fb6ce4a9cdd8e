@@ -1,0 +1,11 @@
+package chpater2;
+
+public class ConditonStatement {
+
+	public static void main(String[] args) {
+		// 조건문
+		// 주어진 조건에 따라 실행할 코드 블럭을 결정하는 것
+		
+	}
+
+}

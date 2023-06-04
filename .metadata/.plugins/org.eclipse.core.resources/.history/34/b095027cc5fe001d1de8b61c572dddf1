@@ -1,0 +1,32 @@
+package chapter1;
+
+public class Variable {
+
+	public static void main(String[] args) {
+		// 변수
+		// 데이터를 저장하는 메모리 공간
+		// 메모리에 공간을 할당하는 행위를 '변수를 선언한다'라고 함.
+		// 할당한 메모리 공간에 데이터를 저장하는 행위를 '변수를 초기화한다'라고 함.
+		
+		// 변수 선언 방법
+		// 데이터타입 변수명;
+		int number;
+		
+		// 변수 초기화 방법
+		// 변수명 = 데이터;
+		number = 99;
+		
+		// 모든 변수는 사용하기전에 필수로 초기화 작업이 이루어져함
+		System.out.println(number);
+		
+		// 변수 선언과 동시에 초기화하는 방법
+		
+		
+		
+	}
+	
+}
+
+
+
+

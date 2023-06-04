@@ -1,0 +1,20 @@
+package chpater2;
+
+public class ConditonStatement {
+
+	public static void main(String[] args) {
+		// 조건문
+		// 주어진 조건에 따라 실행할 코드 블럭을 결정하는 것
+		
+		// if 문
+		// 주어진 논리 표현식이 true이면 if문 뒤의 코드 블럭을 실행
+		// if (논리표현식) { 코드블럭 }
+		int age = 23;
+		
+		if (age > 19) System.out.println("성인입니다.");
+		
+		System.out.println("프로그램 종료");
+		
+	}
+
+}

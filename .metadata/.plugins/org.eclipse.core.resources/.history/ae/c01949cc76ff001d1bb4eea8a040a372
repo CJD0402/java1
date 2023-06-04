@@ -1,0 +1,10 @@
+package chapter1;
+
+// 데이터 타입
+public class DataType {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

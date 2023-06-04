@@ -1,0 +1,10 @@
+package chpater2;
+
+public class LoopStatement {
+
+	public static void main(String[] args) {
+		// 반복문
+		// 특정한 코드 블럭을 조건에 부합하는 동안 반복해서 실행하는 문법
+	}
+
+}
