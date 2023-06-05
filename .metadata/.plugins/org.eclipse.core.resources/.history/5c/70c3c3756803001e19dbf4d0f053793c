@@ -87,15 +87,9 @@ public class LoopStatement {
 		while (true) {
 			// continue;
 			// 반복문을 해당 위치에서 강제로 조건 검사로 넘겨버리는 키워드
-			if (number % 2 == 0) {
-				number++;
-				continue;
-			}
+			if (number % 2 == 0) continue;
 			// 반복문을 조건으로 넘기기 위한 continue문의 경우는
 			// 특정 조건이 만족하면 실행하도록 함
-			
-			// continue를 사용할 때는 조건에 사용되는 
-			// 변수가 변경이 반드시 이루어져야함
 			
 			System.out.println(number++ + "번째 반복중...");
 			// break;

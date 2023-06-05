@@ -87,8 +87,8 @@ public class LoopStatement {
 		while (true) {
 			// continue;
 			// 반복문을 해당 위치에서 강제로 조건 검사로 넘겨버리는 키워드
-			if (number % 2 == 0) {
-				number++;
+			if (number++ % 2 == 0) {
+				// number++;
 				continue;
 			}
 			// 반복문을 조건으로 넘기기 위한 continue문의 경우는

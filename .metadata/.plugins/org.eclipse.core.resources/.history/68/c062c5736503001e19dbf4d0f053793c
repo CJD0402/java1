@@ -83,30 +83,14 @@ public class LoopStatement {
 		
 		// while문의 무한 루프
 		// 개발자가 원하는 위치에서 반복문을 종료시키기 위해 사용
-		int number = 1;
 		while (true) {
-			// continue;
-			// 반복문을 해당 위치에서 강제로 조건 검사로 넘겨버리는 키워드
-			if (number % 2 == 0) {
-				number++;
-				continue;
-			}
-			// 반복문을 조건으로 넘기기 위한 continue문의 경우는
-			// 특정 조건이 만족하면 실행하도록 함
-			
-			// continue를 사용할 때는 조건에 사용되는 
-			// 변수가 변경이 반드시 이루어져야함
-			
-			System.out.println(number++ + "번째 반복중...");
+			System.out.println("반복중...");
 			// break;
 			// 반복문을 해당 위치에서 강제로 종료하는 키워드
-			if (number == 10) break;
-			// 반복 탈출을 위한 break문의 경우는 
-			// 특정 조건이 만족하면 실행하도록 함
-			// = 반복 탈출을 위한 break문은 조건문(if)과 함께 쓰임
+			break;
 		}
 		
-		System.out.println("프로그램 종료!!!");
+		System.out.println("프로그램 종료");
 		
 	}
 
