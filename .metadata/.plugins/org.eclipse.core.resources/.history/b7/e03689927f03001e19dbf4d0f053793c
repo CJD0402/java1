@@ -23,8 +23,8 @@ public class CurrencyExchange02 {
 //					break;
 //				}
 //			}
-			int index = 0;
-			for (; index < MONETARY_UNIT_LIST.length; index++) {
+			
+			for (int index = 0; index < MONETARY_UNIT_LIST.length; index++) {
 				if (MONETARY_UNIT_LIST[index].equals(inputMonetaryUnit)) {
 					existedMonetaryUnit = true;
 					break;
@@ -43,7 +43,7 @@ public class CurrencyExchange02 {
 				continue;
 			}
 			
-			double resultAmount = inputAmount * EXCHANGE_RATE_LIST[index];
+			double resultAmount = inputAmount;
 			System.out.println(resultAmount + "원");
 			
 		}

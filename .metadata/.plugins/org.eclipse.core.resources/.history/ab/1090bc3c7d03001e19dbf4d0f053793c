@@ -17,17 +17,9 @@ public class CurrencyExchange02 {
 			
 			boolean existedMonetaryUnit = false;
 			
-//			for (String monetaryUnit: MONETARY_UNIT_LIST) {
-//				if (monetaryUnit.equals(inputMonetaryUnit)) {
-//					existedMonetaryUnit = true;
-//					break;
-//				}
-//			}
-			int index = 0;
-			for (; index < MONETARY_UNIT_LIST.length; index++) {
+			for (int index = 0; index < MONETARY_UNIT_LIST.length; index++) {
 				if (MONETARY_UNIT_LIST[index].equals(inputMonetaryUnit)) {
 					existedMonetaryUnit = true;
-					break;
 				}
 			}
 			
@@ -35,16 +27,6 @@ public class CurrencyExchange02 {
 				System.out.println("잘못된 화폐 단위입니다.");
 				continue;
 			}
-			
-			System.out.println("금액을 입력하세요. (금액은 0보다 큰 정수이어야합니다.)");
-			int inputAmount = scanner.nextInt();
-			if (inputAmount <= 0) {
-				System.out.println("금액은 0보다 커야합니다.");
-				continue;
-			}
-			
-			double resultAmount = inputAmount * EXCHANGE_RATE_LIST[index];
-			System.out.println(resultAmount + "원");
 			
 		}
 		

@@ -43,7 +43,7 @@ public class CurrencyExchange02 {
 				continue;
 			}
 			
-			double resultAmount = inputAmount * EXCHANGE_RATE_LIST[index];
+			double resultAmount = inputAmount;
 			System.out.println(resultAmount + "원");
 			
 		}
