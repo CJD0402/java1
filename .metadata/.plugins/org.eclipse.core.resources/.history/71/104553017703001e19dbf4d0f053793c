@@ -43,6 +43,10 @@ public class CurrencyExchange01 {
 				monetaryUnit.equals("엔") ? YEN_EXCHANGE_RATE : YUAN_EXCHANGE_RATE);
 		
 		System.out.println(resultAmount + "원");
+
+		System.out.println(inputAmount * DOLLAR_EXCHANGE_RATE + "원");
+		System.out.println(inputAmount * YEN_EXCHANGE_RATE + "원");
+		System.out.println(inputAmount * YUAN_EXCHANGE_RATE + "원");
 	}
 
 }

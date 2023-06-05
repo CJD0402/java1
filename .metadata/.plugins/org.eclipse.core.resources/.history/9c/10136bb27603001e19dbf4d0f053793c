@@ -42,7 +42,11 @@ public class CurrencyExchange01 {
 				(monetaryUnit.equals("달러") ? DOLLAR_EXCHANGE_RATE :
 				monetaryUnit.equals("엔") ? YEN_EXCHANGE_RATE : YUAN_EXCHANGE_RATE);
 		
-		System.out.println(resultAmount + "원");
+		else {
+			System.out.println("잘못된 화폐단위입니다.");
+		}
+		
+		System.out.println(resultAmount);
 	}
 
 }

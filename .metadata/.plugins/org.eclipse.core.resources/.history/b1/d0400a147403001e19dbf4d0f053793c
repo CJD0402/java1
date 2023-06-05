@@ -23,13 +23,6 @@ public class CurrencyExchange01 {
 		
 		// 1-1. 화폐 단위 입력
 		String monetaryUnit = scanner.nextLine();
-		if (!monetaryUnit.equals("달러") && 
-			!monetaryUnit.equals("엔") && 
-			!monetaryUnit.equals("위안")) {
-			System.out.println("잘못된 화폐단위입니다.");
-			return;
-		}
-		
 		// 1-2. 화폐 금액 입력
 		int inputAmount = scanner.nextInt();
 		if (inputAmount <= 0) {
@@ -38,11 +31,17 @@ public class CurrencyExchange01 {
 		}
 		
 		// 2. 사용자가 입력한 화폐 단위를 확인
-		double resultAmount = inputAmount * 
-				(monetaryUnit.equals("달러") ? DOLLAR_EXCHANGE_RATE :
-				monetaryUnit.equals("엔") ? YEN_EXCHANGE_RATE : YUAN_EXCHANGE_RATE);
-		
-		System.out.println(resultAmount + "원");
+		if (monetaryUnit.equals("달러")) {
+			System.out.println(inputAmount * DOLLAR_EXCHANGE_RATE);
+		} else 
+		if (monetaryUnit.equals("엔")) {
+			System.out.println(inputAmount * YEN_EXCHANGE_RATE);
+		} else 
+		if (monetaryUnit.equals("위안")) {
+			System.out.println(inputAmount * YUAN_EXCHANGE_RATE);
+		} else {
+			System.out.println("잘못된 화폐단위입니다.");
+		}
 	}
 
 }

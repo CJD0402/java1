@@ -1,0 +1,9 @@
+package basicPractice;
+
+public class CurrencyExchange02 {
+
+	public static void main(String[] args) {
+		final String[] MONETARY_UNIT_LIST = {"달러", "엔", "위안"};
+	}
+
+}

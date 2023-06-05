@@ -26,8 +26,7 @@ public class CurrencyExchange01 {
 		if (!monetaryUnit.equals("달러") && 
 			!monetaryUnit.equals("엔") && 
 			!monetaryUnit.equals("위안")) {
-			System.out.println("잘못된 화폐단위입니다.");
-			return;
+			
 		}
 		
 		// 1-2. 화폐 금액 입력
@@ -42,7 +41,11 @@ public class CurrencyExchange01 {
 				(monetaryUnit.equals("달러") ? DOLLAR_EXCHANGE_RATE :
 				monetaryUnit.equals("엔") ? YEN_EXCHANGE_RATE : YUAN_EXCHANGE_RATE);
 		
-		System.out.println(resultAmount + "원");
+		else {
+			System.out.println("잘못된 화폐단위입니다.");
+		}
+		
+		System.out.println(resultAmount);
 	}
 
 }
