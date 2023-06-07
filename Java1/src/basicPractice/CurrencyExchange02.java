@@ -15,7 +15,6 @@ public class CurrencyExchange02 {
 			String inputMonetaryUnit = scanner.nextLine();
 			if (inputMonetaryUnit.equals("종료")) break;
 			
-			boolean existedMonetaryUnit = false;
 			
 //			for (String monetaryUnit: MONETARY_UNIT_LIST) {
 //				if (monetaryUnit.equals(inputMonetaryUnit)) {
@@ -23,6 +22,9 @@ public class CurrencyExchange02 {
 //					break;
 //				}
 //			}
+			
+			boolean existedMonetaryUnit = false;
+			
 			int index = 0;
 			for (; index < MONETARY_UNIT_LIST.length; index++) {
 				if (MONETARY_UNIT_LIST[index].equals(inputMonetaryUnit)) {
