@@ -74,7 +74,7 @@ class MathematicalFormula {
 	
 	// 원의 넓이
 	static double getWidthOfCircle(int radius) {
-		double widthOfCircle = radius * radius * PIE;
+		double widthOfCircle = radius * radius * pie;
 		return widthOfCircle;
 	}
 	

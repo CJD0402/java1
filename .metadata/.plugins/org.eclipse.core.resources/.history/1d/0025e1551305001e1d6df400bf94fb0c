@@ -63,7 +63,7 @@ class ExchangeRateInfomation {
 // 메서드의 집합으로써의 클래스
 class MathematicalFormula {
 	
-	static final double PIE = 3.14; 
+	static double pie = 3.14; 
 	
 	// 현재 클래스는 수학 공식에 대한 책임만 지고 있는 클래스인데
 	// 관련 없는 책임이 부여된 경우이다.
@@ -74,8 +74,7 @@ class MathematicalFormula {
 	
 	// 원의 넓이
 	static double getWidthOfCircle(int radius) {
-		double widthOfCircle = radius * radius * PIE;
-		return widthOfCircle;
+		double widthOfCircle = radius * radius * pie;
 	}
 	
 	// 삼각형의 넓이

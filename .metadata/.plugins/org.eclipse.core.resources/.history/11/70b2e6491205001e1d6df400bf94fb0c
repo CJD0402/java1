@@ -63,7 +63,7 @@ class ExchangeRateInfomation {
 // 메서드의 집합으로써의 클래스
 class MathematicalFormula {
 	
-	static final double PIE = 3.14; 
+	double pie = 3.14; 
 	
 	// 현재 클래스는 수학 공식에 대한 책임만 지고 있는 클래스인데
 	// 관련 없는 책임이 부여된 경우이다.
@@ -71,12 +71,6 @@ class MathematicalFormula {
 	// void printData(String name, int age) {
 	// 	System.out.println("당신의 이름은 " + name + " 이고 나이는 " + age + "입니다.");
 	// }
-	
-	// 원의 넓이
-	static double getWidthOfCircle(int radius) {
-		double widthOfCircle = radius * radius * PIE;
-		return widthOfCircle;
-	}
 	
 	// 삼각형의 넓이
 	static double getWidthOfTriangle(int base, int height) {
@@ -139,14 +133,6 @@ public class Oop1 {
 		
 		MathematicalFormula methematicalFormula = new MathematicalFormula();
 		MathematicalFormula methematicalFormula2 = new MathematicalFormula();
-		
-		System.out.println(methematicalFormula.pie);
-		System.out.println(methematicalFormula2.pie);
-		
-		methematicalFormula2.pie = 10.34;
-		
-		System.out.println(methematicalFormula.pie);
-		System.out.println(methematicalFormula2.pie);
 		
 		// 반환값이 있는 메서드의 경우 해당 반환타입을 받을 수 있는 타입의 변수로
 		// 받아야함
