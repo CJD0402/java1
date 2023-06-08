@@ -140,13 +140,13 @@ public class Oop1 {
 		MathematicalFormula methematicalFormula = new MathematicalFormula();
 		MathematicalFormula methematicalFormula2 = new MathematicalFormula();
 		
-		System.out.println(methematicalFormula.PIE);
-		System.out.println(methematicalFormula2.PIE);
+		System.out.println(methematicalFormula.pie);
+		System.out.println(methematicalFormula2.pie);
 		
-		// methematicalFormula2.PIE = 10.34;
+		methematicalFormula2.pie = 10.34;
 		
-		System.out.println(methematicalFormula.PIE);
-		System.out.println(methematicalFormula2.PIE);
+		System.out.println(methematicalFormula.pie);
+		System.out.println(methematicalFormula2.pie);
 		
 		// 반환값이 있는 메서드의 경우 해당 반환타입을 받을 수 있는 타입의 변수로
 		// 받아야함

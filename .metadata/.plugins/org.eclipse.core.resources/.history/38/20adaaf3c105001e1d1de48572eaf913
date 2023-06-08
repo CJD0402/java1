@@ -1,0 +1,26 @@
+package chapter3;
+
+class OopTest2 {
+	
+	int instanceInt;
+	String instanceString;
+	
+}
+
+public class Oop2 {
+	
+	void basicParameterMethod(int argment) {
+		argment = 99;
+	}
+	
+	void refferencePramenterMethod(OopTest2 argment) {
+		
+	}
+
+	public static void main(String[] args) {
+		
+		
+		
+	}
+
+}
