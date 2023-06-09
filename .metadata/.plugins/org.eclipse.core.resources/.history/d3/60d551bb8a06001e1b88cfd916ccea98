@@ -1,0 +1,24 @@
+package basicPractice;
+
+class ExchangeRateInformation {
+	
+	String monetaryUnit;
+	double exchangeRate;
+	
+}
+
+public class CurrencyExchange03 {
+	
+	static ExchangeRateInformation[] exchangeRateArray; 
+	
+	public static void main(String[] args) {
+		
+		exchangeRateArray = new ExchangeRateInformation[] { 
+				new ExchangeRateInformation(),
+				new ExchangeRateInformation(),
+				new ExchangeRateInformation()
+		};
+		
+	}
+	
+}

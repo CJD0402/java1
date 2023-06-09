@@ -1,0 +1,16 @@
+package basicPractice;
+
+class ExchangeRateInformation {
+	
+	String monetaryUnit;
+	double exchangeRate;
+	
+}
+
+public class CurrencyExchange03 {
+	
+	public static void main(String[] args) {
+		
+	}
+	
+}
