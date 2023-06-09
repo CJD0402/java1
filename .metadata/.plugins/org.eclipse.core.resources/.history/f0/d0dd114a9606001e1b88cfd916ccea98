@@ -42,23 +42,24 @@ public class CurrencyExchange03 {
 		if (inputMonetaryUnit.equals("종료")) inputMonetaryUnit = null;
 	}
 	
-	static void findByMonetaryUnit() {
+	static void findByMonetaryUnit(String monetaryUnit) {
 		for (ExchangeRateInformation item: exchangeRateArray) {
-			if (item.monetaryUnit.equals(inputMonetaryUnit)) {
+			if (item.monetaryUnit.equals(monetaryUnit)) {
 				exchangeRateInformation = item;
 				break;
 			}
 		}
 	}
 	
-	static void inputAmount() {
+	static int inputAmount() {
 		Scanner scanner = new Scanner(System.in);
 		
 		System.out.println("금액을 입력하세요. (금액은 0보다 큰 정수이어야 합니다.)");
-		inputAmount = scanner.nextInt();
+		int inputAmount = scanner.nextInt();
+		return inputAmount;
 	}
 	
-	static void calculationAmount() {
+	static void calculationAmount(int inputAmount, ExchangeRateInformation exchangeRateInformation) {
 		double resultAmount = inputAmount * exchangeRateInformation.exchangeRate;
 		System.out.println(resultAmount + "원");
 	}
@@ -68,25 +69,26 @@ public class CurrencyExchange03 {
 		initExchangeRateArray();
 		
 		while (true) {
-			inputMonetaryUnit();
+			String inputMonetaryUnit = inputMonetaryUnit();
 			if (inputMonetaryUnit == null) break;
 			
-			findByMonetaryUnit();
+			ExchangeRateInformation exchangeRateInformation = 
+					findByMonetaryUnit(inputMonetaryUnit);
 			if (exchangeRateInformation == null) {
 				System.out.println("잘못된 화폐 단위입니다.");
 				continue;
 			}
 			
-			inputAmount();
+			int inputAmount = inputAmount();
 			if (inputAmount <= 0) {
 				System.out.println("금액은 0보다 커야합니다.");
 				continue;
 			}
 			
-			calculationAmount();
+			calculationAmount(inputAmount, exchangeRateInformation);
 		}
 		
-		System.out.println("프로그램 종료!");
+		System.out.println("프로그램 종료!")
 		
 	}
 	
