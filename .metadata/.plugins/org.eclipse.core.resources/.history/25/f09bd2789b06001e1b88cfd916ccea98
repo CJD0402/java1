@@ -1,0 +1,29 @@
+package chapter3;
+
+class Human {
+	String name;
+	int age;
+	String address;
+	String telNumber;
+}
+
+// 직업군에 관련된 클래스 3개
+class Police extends Human {
+	String classes;
+}
+
+class Developer {
+	String position;
+}
+
+class SalesMan {
+	int salesAmount;
+}
+
+public class Oop3 {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

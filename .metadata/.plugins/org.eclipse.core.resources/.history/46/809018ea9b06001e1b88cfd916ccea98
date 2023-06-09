@@ -1,0 +1,37 @@
+package chapter3;
+
+class Human {
+	String name;
+	String address;
+	String telNumber;
+}
+
+// 직업군에 관련된 클래스 3개
+class Police extends Human {
+	String classes;
+}
+
+class Developer extends Human {
+	String position;
+}
+
+class SalesMan extends Human {
+	int salesAmount;
+}
+
+public class Oop3 {
+
+	public static void main(String[] args) {
+		
+		Police police = new Police();
+		police.address = "부산광역시";
+		police.classes = "상경";
+		
+	}
+
+}
+
+
+
+
+
