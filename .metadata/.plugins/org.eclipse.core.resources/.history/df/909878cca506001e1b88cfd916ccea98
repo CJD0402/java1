@@ -82,7 +82,6 @@ class Developer extends Human {
 	// 상위 클래스에서 final로 정의된 메서드는 오버라이딩할 수 없음
 	// 오버라이딩 메서드의 접근 제어자는 상위 클래스의 메서드 보다 좁게 변경할 수 없음
 	
-	// @Override : 컴파일러한테 아래에 오는 메서드는 상위클래스의 메서드를 오버라이딩 한 것이라고 알려주는 것
 	@Override
 	void print() {
 		System.out.println("name : " + this.name);

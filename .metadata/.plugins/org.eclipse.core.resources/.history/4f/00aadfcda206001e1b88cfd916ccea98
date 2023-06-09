@@ -45,10 +45,9 @@ class Police extends Human {
 	
 	void print() {
 		// super 키워드를 통해서 부모 클래스를 지칭할 수 있음
-		// System.out.println("name : " + super.name);
-		// System.out.println("address : " + super.address);
-		// System.out.println("telNumber : " + super.telNumber);
-		super.print();
+		System.out.println("name : " + super.name);
+		System.out.println("address : " + super.address);
+		System.out.println("telNumber : " + super.telNumber);
 		System.out.println("classes : " + this.classes);
 	}
 }
@@ -71,25 +70,6 @@ class Police extends Human {
 
 class Developer extends Human {
 	String position;
-	
-	// 오버라이딩
-	// 상위 메서드에 정의되어 있는 메서드를 재정의 하는 것
-	// 오버라이딩을 통해서 코드의 중복 제거 / 메서드의 유연성을 확보 할 수 있음
-	// 또한 오버라이딩을 통해서 다형성을 구현할 수 있음
-	
-	// 오버라이딩의 조건
-	// 메서드 이름, 반환타입, 매개변수의 타입 / 갯수 / 조합이 상위 클래스의 메서드와 같아야 함
-	// 상위 클래스에서 final로 정의된 메서드는 오버라이딩할 수 없음
-	// 오버라이딩 메서드의 접근 제어자는 상위 클래스의 메서드 보다 좁게 변경할 수 없음
-	
-	// @Override : 컴파일러한테 아래에 오는 메서드는 상위클래스의 메서드를 오버라이딩 한 것이라고 알려주는 것
-	@Override
-	void print() {
-		System.out.println("name : " + this.name);
-		System.out.println("address : " + this.address);
-		System.out.println("telNumber : " + this.telNumber);
-		System.out.println("position : " + this.position);
-	}
 }
 
 class SalesMan extends Human {
