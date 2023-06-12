@@ -129,7 +129,7 @@ class User {
 }
 
 class Board {
-	
+
 	private int boardNumber;
 	private String boardTitle;
 	private String boardContent;
@@ -138,6 +138,90 @@ class Board {
 	private int boardViewCount;
 	private int boardLikeCount;
 	private int boardCommentCount;
+
+	public Board(int boardNumber, String boardTitle, String boardContent, String boardWriteDatetime,
+			String boardWriterId, int boardViewCount, int boardLikeCount, int boardCommentCount) {
+		this.boardNumber = boardNumber;
+		this.boardTitle = boardTitle;
+		this.boardContent = boardContent;
+		this.boardWriteDatetime = boardWriteDatetime;
+		this.boardWriterId = boardWriterId;
+		this.boardViewCount = boardViewCount;
+		this.boardLikeCount = boardLikeCount;
+		this.boardCommentCount = boardCommentCount;
+	}
+
+	public int getBoardNumber() {
+		return boardNumber;
+	}
+
+	public void setBoardNumber(int boardNumber) {
+		this.boardNumber = boardNumber;
+	}
+
+	public String getBoardTitle() {
+		return boardTitle;
+	}
+
+	public void setBoardTitle(String boardTitle) {
+		this.boardTitle = boardTitle;
+	}
+
+	public String getBoardContent() {
+		return boardContent;
+	}
+
+	public void setBoardContent(String boardContent) {
+		this.boardContent = boardContent;
+	}
+
+	public String getBoardWriteDatetime() {
+		return boardWriteDatetime;
+	}
+
+	public void setBoardWriteDatetime(String boardWriteDatetime) {
+		this.boardWriteDatetime = boardWriteDatetime;
+	}
+
+	public String getBoardWriterId() {
+		return boardWriterId;
+	}
+
+	public void setBoardWriterId(String boardWriterId) {
+		this.boardWriterId = boardWriterId;
+	}
+
+	public int getBoardViewCount() {
+		return boardViewCount;
+	}
+
+	public void setBoardViewCount(int boardViewCount) {
+		this.boardViewCount = boardViewCount;
+	}
+
+	public int getBoardLikeCount() {
+		return boardLikeCount;
+	}
+
+	public void setBoardLikeCount(int boardLikeCount) {
+		this.boardLikeCount = boardLikeCount;
+	}
+
+	public int getBoardCommentCount() {
+		return boardCommentCount;
+	}
+
+	public void setBoardCommentCount(int boardCommentCount) {
+		this.boardCommentCount = boardCommentCount;
+	}
+
+	@Override
+	public String toString() {
+		return "Board [boardNumber=" + boardNumber + ", boardTitle=" + boardTitle + ", boardContent=" + boardContent
+				+ ", boardWriteDatetime=" + boardWriteDatetime + ", boardWriterId=" + boardWriterId
+				+ ", boardViewCount=" + boardViewCount + ", boardLikeCount=" + boardLikeCount + ", boardCommentCount="
+				+ boardCommentCount + "]";
+	}
 	
 }
 
