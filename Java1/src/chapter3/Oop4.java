@@ -18,6 +18,8 @@ public class Oop4 {
 		ExampleClass1 exampleClass1 = new ExampleClass1();
 		ExampleClass2 exampleClass2 = new ExampleClass2();
 		
+		User user = new User("John", 20, "email@email.com");
+		
 		// chapter3etc 패키지에 선언된 ExampleClass1의 publicVariable 필드는
 		// 접근 제어자가 public 이기 때문에 어떤 패키지에서도 접근이 가능
 		exampleClass1.publicVariable = "public";
@@ -42,6 +44,9 @@ public class Oop4 {
 		// 같은 패키지에 선언된 ExampleClass2의 privateVariable2 필드는
 		// 접근 제어자가 private 이기 때문에 같은 패키지 내부라 해도 접근이 불가능
 		exampleClass2.privateVariable2 = "private";
+		
+		System.out.println(user.getName());
+		
 		
 	}
 
@@ -71,6 +76,70 @@ class ExampleClass2 extends ExampleClass1 {
 	
 }
 
+class User {
+	// 필드의 접근 제어자를 private으로 지정하여
+	// 해당 클래스로 생성된 인스턴스의 필드 값의 무결성을 보장할 수 있음
+	// 클래스의 구성 필드를 숨길수 있음
+	private String name;
+	private int age;
+	private String email;
+	
+	User() {}
+	
+	// 클래스의 필드의 접근 제어자를 private으로 지정하면
+	// 데이터를 초기화하기 위해 모든 필드의 값을 받는 생성자를 만들어 주어야 함
+	User(String name, int age, String email) {
+		this.name = name;
+		this.age = age;
+		this.email = email;
+	}
+	
+	// 클래스의 필드의 접근 제어자가 private으로 지정되어 있다면
+	// 특정 필드의 데이터를 반환하는 public 접근 제어자의 getter 메서드가 필요함
+	public String getName() {
+		return this.name;
+	}
+	
+	public int getAge() {
+		return this.age;
+	}
+	
+	public String getEmail() {
+		return this.email;
+	}
+	
+	// 클래스의 필드의 접근 제어자가 private으로 지정되어 있다면
+	// 특정 필드의 데이터를 변경해주는 public 접근 제어자의 setter 메서드가 필요함
+	// setter 메서드의 경우는 완벽한 무결정을 보장하기 위해서는 사용을 지양해야함
+	// 다만, 빈 생성자를 통해서 인스턴스를 생성하고 추후에 초기화를 하는 인스턴스이라면
+	// setter 메서드가 반드시 필요함
+	// 인스턴스의 데이터가 변경이 이루어져야한다면 특정 필드에 대한 setter 메서드만
+	// 만들어주는것이 좋음
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
+}
+
+class Board {
+	
+	private int boardNumber;
+	private String boardTitle;
+	private String boardContent;
+	private String boardWriteDatetime;
+	private String boardWriterId;
+	private int boardViewCount;
+	private int boardLikeCount;
+	private int boardCommentCount;
+	
+}
 
 
 
