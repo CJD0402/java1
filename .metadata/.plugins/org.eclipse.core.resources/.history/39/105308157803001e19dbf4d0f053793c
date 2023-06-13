@@ -1,9 +1,0 @@
-package basicPractice;
-
-public class CurrencyExchange02 {
-
-	public static void main(String[] args) {
-		
-	}
-
-}
