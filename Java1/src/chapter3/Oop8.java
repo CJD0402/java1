@@ -15,12 +15,37 @@ class SmartPhone {
 	boolean power;
 }
 
-class Galaxy extends SmartPhone {
+class Galaxy extends SmartPhone implements Talk {
 	String bixby;
+
+	@Override
+	public void voiceTalk(String to, String from) {
+		System.out.println(from + "가 " + to + "에게 보이스톡을 시도합니다.");
+	}
+
+	@Override
+	public void faceTalk(String to, String from) {
+		System.out.println(from + "가 " + to + "에게 페이스톡을 시도합니다.");
+	}
 }
 
-class IPhone extends SmartPhone {
+class IPhone extends SmartPhone implements Talk {
 	int shiri;
+
+	@Override
+	public void voiceTalk(String to, String from) {
+		System.out.println("보이스 톡을 호출합니다.");
+	}
+
+	@Override
+	public void faceTalk(String to, String from) {
+		System.out.println("페이스 톡을 호출합니다.");
+	}
+}
+
+interface Talk {
+	void voiceTalk(String to, String from);
+	void faceTalk(String to, String from);
 }
 
 public class Oop8 {
@@ -51,6 +76,11 @@ public class Oop8 {
 		System.out.println(galaxy2);
 		System.out.println(galaxy2.bixby);
 		System.out.println(iPhone2.shiri);
+		
+		// 인터페이스를 참조 타입으로 지정한 참조 변수는
+		// 해당 인터페이스를 구현한 클래스의 인스턴스를 받을 수 있음
+		Talk talk = new IPhone();
+		talk.faceTalk("010-1111-1111", "010-2222-1111");
 	}
 
 }
