@@ -1,0 +1,9 @@
+package basicPractice.hr;
+
+public class MainApplication {
+
+	public static void main(String[] args) {
+		
+	}
+
+}
