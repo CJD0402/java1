@@ -1,5 +1,7 @@
 package basicPractice.hr.service;
 
+import basicPractice.hr.dto.GetEmployeeListResponseDto;
+import basicPractice.hr.dto.GetEmployeeResponseDto;
 import basicPractice.hr.dto.PatchEmployeeRequestDto;
 import basicPractice.hr.dto.PostEmployeeRequestDto;
 
@@ -12,9 +14,14 @@ import basicPractice.hr.dto.PostEmployeeRequestDto;
 // 직원 삭제 : 사번을 입력하면 해당하는 사번의 직원 정보를 저장소에서 제거
 public interface MainService {
 
+	// 작성, 수정, 삭제와 관련된 기능은 반환 타입이 대부분 성공/실패
+	// 읽기와 관련된 기능은 반환 타입이 대부분 DTO 형식의 객체
+	
+	// 작성, 수정과 관련된 기능은 입력 타입이 대부분 DTO 형식의 객체
+	// 읽기, 삭제와 관련된 기능은 입력 타입이 대부분 단일 형식의 타입
 	boolean postEmployee(PostEmployeeRequestDto dto);
-	void getEmployeeList();
-	void getEmployee(String employeeNumber);
+	GetEmployeeListResponseDto getEmployeeList();
+	GetEmployeeResponseDto getEmployee(String employeeNumber);
 	boolean patchEmployee(PatchEmployeeRequestDto dto);
 	boolean deleteEmployee(String employeeNumber);
 	

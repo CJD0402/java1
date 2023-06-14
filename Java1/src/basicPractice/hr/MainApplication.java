@@ -1,5 +1,7 @@
 package basicPractice.hr;
 
+import basicPractice.hr.controller.MainController;
+
 // 간단한 인사관리 프로그램
 // 인사 등록, 직원 조회(전체, 특정 직원), 직원 정보 수정, 직원 삭제
 // [CRUD] : Create, Read, Update, Delete
@@ -18,8 +20,14 @@ package basicPractice.hr;
 
 public class MainApplication {
 
+	public static MainController mainController; 
+	
 	public static void main(String[] args) {
+		
+		
 		
 	}
 
 }
+
+
