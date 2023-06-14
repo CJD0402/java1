@@ -3,8 +3,15 @@ package basicPractice.hr.controller.implement;
 import basicPractice.hr.controller.MainController;
 import basicPractice.hr.dto.PatchEmployeeRequestDto;
 import basicPractice.hr.dto.PostEmployeeRequestDto;
+import basicPractice.hr.service.MainService;
 
 public class MainControllerImplement implements MainController {
+	
+	private final MainService mainService;
+	
+	public MainControllerImplement (MainService mainService) {
+		this.mainService = mainService;
+	}
 
 	@Override
 	public void postEmployee(PostEmployeeRequestDto dto) {
@@ -18,8 +25,11 @@ public class MainControllerImplement implements MainController {
 		}
 		
 		// 입력 값이 모두 입력되었다면 실제 비즈니스 로직을 실행하여 결과를 반환 받음
+		boolean result = mainService.postEmployee(dto);
 		
 		// 결과를 출력
+		String resultMessage = result ? "인사 등록에 성공했습니다." : "인사 등록에 실패했습니다.";
+		System.out.println(resultMessage);
 		
 	}
 

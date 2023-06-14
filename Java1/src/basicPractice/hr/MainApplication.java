@@ -1,6 +1,14 @@
 package basicPractice.hr;
 
+import java.util.Scanner;
+
 import basicPractice.hr.controller.MainController;
+import basicPractice.hr.controller.implement.MainControllerImplement;
+import basicPractice.hr.dto.PostEmployeeRequestDto;
+import basicPractice.hr.repository.EmployeeRepository;
+import basicPractice.hr.repository.implement.EmployeeRepositoryImplement;
+import basicPractice.hr.service.MainService;
+import basicPractice.hr.service.implement.MainServiceImplement;
 
 // 간단한 인사관리 프로그램
 // 인사 등록, 직원 조회(전체, 특정 직원), 직원 정보 수정, 직원 삭제
@@ -24,8 +32,39 @@ public class MainApplication {
 	
 	public static void main(String[] args) {
 		
+		EmployeeRepository employeeRepository = new EmployeeRepositoryImplement();
+		MainService mainService = new MainServiceImplement(employeeRepository);
+		mainController = new MainControllerImplement(mainService);
 		
+		postEmployee();
 		
+	}
+	
+	private static void postEmployee() {
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.print("사번 : ");
+		String employeeNumber = scanner.nextLine();
+		System.out.print("이름 : ");
+		String name = scanner.nextLine();
+		System.out.print("주소 : ");
+		String address = scanner.nextLine();
+		System.out.print("생년월일 : ");
+		String birth = scanner.nextLine();
+		System.out.print("이메일 : ");
+		String email = scanner.nextLine();
+		System.out.print("부서 : ");
+		String department = scanner.nextLine();
+		
+		PostEmployeeRequestDto dto = new PostEmployeeRequestDto();
+		dto.setEmployeeNumber(employeeNumber);
+		dto.setName(name);
+		dto.setAddress(address);
+		dto.setBirth(birth);
+		dto.setEmail(email); 
+		dto.setDepartment(department);
+		
+		mainController.postEmployee(dto);
 	}
 
 }

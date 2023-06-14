@@ -1,5 +1,7 @@
 package basicPractice.hr.entity;
 
+import basicPractice.hr.dto.PostEmployeeRequestDto;
+
 //직원 : 사번, 이름, 주소, 생년월일, 이메일, 부서
 public class EmployeeEntity {
 	
@@ -20,6 +22,15 @@ public class EmployeeEntity {
 		this.birth = birth;
 		this.email = email;
 		this.department = department;
+	}
+	
+	public EmployeeEntity(PostEmployeeRequestDto dto) {
+		this.employeeNumber = dto.getEmployeeNumber();
+		this.name = dto.getName();
+		this.address = dto.getAddress();
+		this.birth = dto.getBirth();
+		this.email = dto.getEmail();
+		this.department = dto.getDepartment();
 	}
 
 	public String getEmployeeNumber() {
