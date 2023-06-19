@@ -35,8 +35,11 @@ public class MainServiceImplement implements MainService {
 
 	@Override
 	public GetEmployeeResponseDto getEmployee(String employeeNumber) {
-		// TODO Auto-generated method stub
-		return null;
+		EmployeeEntity employeeEntity = employeeRepository.findByEmployeeNumber(employeeNumber);
+		if (employeeEntity == null) return null;
+		
+		GetEmployeeResponseDto result = new GetEmployeeResponseDto(employeeEntity);
+		return result;
 	}
 
 	@Override

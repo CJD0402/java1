@@ -1,5 +1,7 @@
 package basicPractice.hr.dto;
 
+import basicPractice.hr.entity.EmployeeEntity;
+
 public class GetEmployeeResponseDto {
 
 	private String employeeNumber;
@@ -10,6 +12,15 @@ public class GetEmployeeResponseDto {
 	private String department;
 	
 	public GetEmployeeResponseDto() {}
+
+	public GetEmployeeResponseDto(EmployeeEntity employeeEntity) {
+		this.employeeNumber = employeeEntity.getEmployeeNumber();
+		this.name = employeeEntity.getName();
+		this.address = employeeEntity.getAddress();
+		this.birth = employeeEntity.getBirth();
+		this.email = employeeEntity.getEmail();
+		this.department = employeeEntity.getDepartment();
+	}
 
 	public GetEmployeeResponseDto(String employeeNumber, String name, String address, String birth, String email,
 			String department) {

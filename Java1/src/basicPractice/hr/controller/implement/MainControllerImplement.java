@@ -2,6 +2,7 @@ package basicPractice.hr.controller.implement;
 
 import basicPractice.hr.controller.MainController;
 import basicPractice.hr.dto.GetEmployeeListResponseDto;
+import basicPractice.hr.dto.GetEmployeeResponseDto;
 import basicPractice.hr.dto.PatchEmployeeRequestDto;
 import basicPractice.hr.dto.PostEmployeeRequestDto;
 import basicPractice.hr.service.MainService;
@@ -39,15 +40,24 @@ public class MainControllerImplement implements MainController {
 		
 		GetEmployeeListResponseDto[] result = mainService.getEmployeeList();
 		
-		for (GetEmployeeListResponseDto item: result)
-			System.out.println(item.toString());
+		for (GetEmployeeListResponseDto item: result) System.out.println(item.toString());
 		
 	}
 
 	@Override
 	public void getEmployee(String employeeNumber) {
-		// TODO Auto-generated method stub
-
+		
+		boolean validated = employeeNumber != null && !employeeNumber.isBlank();
+		if (!validated) {
+			System.out.println("사번을 입력하세요.");
+			return;
+		}
+		
+		GetEmployeeResponseDto result = mainService.getEmployee(employeeNumber);
+		
+		String resultMessage = result != null ? result.toString() : "존재하지 않는 사번입니다.";
+		System.out.println(resultMessage);
+		
 	}
 
 	@Override

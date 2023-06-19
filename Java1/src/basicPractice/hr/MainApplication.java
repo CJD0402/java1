@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import basicPractice.hr.controller.MainController;
 import basicPractice.hr.controller.implement.MainControllerImplement;
+import basicPractice.hr.dto.PatchEmployeeRequestDto;
 import basicPractice.hr.dto.PostEmployeeRequestDto;
 import basicPractice.hr.repository.EmployeeRepository;
 import basicPractice.hr.repository.implement.EmployeeRepositoryImplement;
@@ -32,17 +33,24 @@ public class MainApplication {
 	
 	public static void main(String[] args) {
 		
-		Scanner scanner = new Scanner(System.in);
-		
-		System.out.print("작업 : ");
-		String method = scanner.nextLine();
-		
-		EmployeeRepository employeeRepository = new EmployeeRepositoryImplement();
-		MainService mainService = new MainServiceImplement(employeeRepository);
-		mainController = new MainControllerImplement(mainService);
-		
-		if (method.equals("POST /employee")) postEmployee();
-		if (method.equals("GET /employee/list")) getEmployeeList();
+		while (true) {
+			
+			Scanner scanner = new Scanner(System.in);
+			
+			System.out.print("작업 : ");
+			String method = scanner.nextLine();
+			
+			if (method.equalsIgnoreCase("end")) break;
+			
+			EmployeeRepository employeeRepository = new EmployeeRepositoryImplement();
+			MainService mainService = new MainServiceImplement(employeeRepository);
+			mainController = new MainControllerImplement(mainService);
+			
+			if (method.equals("POST /employee")) postEmployee();
+			if (method.equals("GET /employee/list")) getEmployeeList();
+			if (method.equals("GET /employee")) getEmployee();
+			
+		}
 		
 	}
 	
@@ -74,8 +82,44 @@ public class MainApplication {
 	}
 	
 	private static void getEmployeeList() {
-		
 		mainController.getEmployeeList();
+	}
+	
+	private static void getEmployee() {
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("사번 : ");
+		String employeeNumber = scanner.nextLine();
+		
+		mainController.getEmployee(employeeNumber);
+	}
+	
+	private static void patchEmployee() {
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.print("사번 : ");
+		String employeeNumber = scanner.nextLine();
+		System.out.print("이름 : ");
+		String name = scanner.nextLine();
+		System.out.print("주소 : ");
+		String address = scanner.nextLine();
+		System.out.print("생년월일 : ");
+		String birth = scanner.nextLine();
+		System.out.print("이메일 : ");
+		String email = scanner.nextLine();
+		System.out.print("부서 : ");
+		String department = scanner.nextLine();
+		
+		PatchEmployeeRequestDto dto = new PatchEmployeeRequestDto();
+		dto.setEmployeeNumber(employeeNumber);
+		dto.setName(name);
+		dto.setAddress(address);
+		dto.setBirth(birth);
+		dto.setEmail(email);
+		dto.setDepartment(department);
+		
+		mainController.patchEmployee(dto);
 		
 	}
 

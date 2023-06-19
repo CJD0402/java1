@@ -36,8 +36,24 @@ public class EmployeeRepositoryImplement implements EmployeeRepository {
 
 	@Override
 	public EmployeeEntity findByEmployeeNumber(String employeeNumber) {
-		// TODO Auto-generated method stub
-		return null;
+		EmployeeEntity result = null;
+		
+		EmployeeEntity[] employeeList = EmployeeRepository.employeeList;
+		for (EmployeeEntity employeeEntity: employeeList) {
+			if (employeeEntity == null) break;
+			
+			boolean isEqualEmployeeNumber = 
+					employeeEntity.getEmployeeNumber().equals(employeeNumber);
+			
+			if (isEqualEmployeeNumber) {
+				result = employeeEntity;
+				break;
+			}
+		}
+		
+		return result;
 	}
 
 }
+
+
