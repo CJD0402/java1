@@ -37,6 +37,7 @@ public class MainApplication {
 		mainController = new MainControllerImplement(mainService);
 		
 		postEmployee();
+		getEmployeeList();
 		
 	}
 	
@@ -66,7 +67,15 @@ public class MainApplication {
 		
 		mainController.postEmployee(dto);
 	}
+	
+	private static void getEmployeeList() {
+		
+		mainController.getEmployeeList();
+		
+	}
 
 }
+
+
 
 

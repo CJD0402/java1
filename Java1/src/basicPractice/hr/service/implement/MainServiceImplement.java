@@ -25,9 +25,26 @@ public class MainServiceImplement implements MainService {
 	}
 
 	@Override
-	public GetEmployeeListResponseDto getEmployeeList() {
-		// TODO Auto-generated method stub
-		return null;
+	public GetEmployeeListResponseDto[] getEmployeeList() {
+		EmployeeEntity[] employeeEntityList = employeeRepository.findAll();
+		
+		GetEmployeeListResponseDto[] result = new GetEmployeeListResponseDto[5];
+		for (int index = 0; index < result.length; index++) {
+			
+			EmployeeEntity employeeEntity = employeeEntityList[index];
+			
+			GetEmployeeListResponseDto item = new GetEmployeeListResponseDto();
+			item.setEmployeeNumber(employeeEntity.getEmployeeNumber());
+			item.setName(employeeEntity.getName());
+			item.setEmail(employeeEntity.getEmail());
+			item.setAddress(employeeEntity.getAddress());
+			item.setBirth(employeeEntity.getBirth());
+			item.setDepartment(employeeEntity.getDepartment());
+			
+			result[index] = item;
+		}
+		
+		return result;
 	}
 
 	@Override

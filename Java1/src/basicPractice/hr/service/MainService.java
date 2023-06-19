@@ -20,7 +20,7 @@ public interface MainService {
 	// 작성, 수정과 관련된 기능은 입력 타입이 대부분 DTO 형식의 객체
 	// 읽기, 삭제와 관련된 기능은 입력 타입이 대부분 단일 형식의 타입
 	boolean postEmployee(PostEmployeeRequestDto dto);
-	GetEmployeeListResponseDto getEmployeeList();
+	GetEmployeeListResponseDto[] getEmployeeList();
 	GetEmployeeResponseDto getEmployee(String employeeNumber);
 	boolean patchEmployee(PatchEmployeeRequestDto dto);
 	boolean deleteEmployee(String employeeNumber);

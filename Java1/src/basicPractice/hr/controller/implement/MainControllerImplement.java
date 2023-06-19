@@ -1,6 +1,7 @@
 package basicPractice.hr.controller.implement;
 
 import basicPractice.hr.controller.MainController;
+import basicPractice.hr.dto.GetEmployeeListResponseDto;
 import basicPractice.hr.dto.PatchEmployeeRequestDto;
 import basicPractice.hr.dto.PostEmployeeRequestDto;
 import basicPractice.hr.service.MainService;
@@ -35,8 +36,12 @@ public class MainControllerImplement implements MainController {
 
 	@Override
 	public void getEmployeeList() {
-		// TODO Auto-generated method stub
-
+		
+		GetEmployeeListResponseDto[] result = mainService.getEmployeeList();
+		
+		for (GetEmployeeListResponseDto item: result)
+			System.out.println(item.toString());
+		
 	}
 
 	@Override

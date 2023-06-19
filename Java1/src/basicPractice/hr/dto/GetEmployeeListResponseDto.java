@@ -24,6 +24,10 @@ public class GetEmployeeListResponseDto {
 	public String getEmployeeNumber() {
 		return employeeNumber;
 	}
+	
+	public void setEmployeeNumber(String employeeNumber) {
+		this.employeeNumber = employeeNumber;
+	}
 
 	public String getName() {
 		return name;
