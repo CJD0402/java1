@@ -30,8 +30,8 @@ public class EmployeeRepositoryImplement implements EmployeeRepository {
 
 	@Override
 	public EmployeeEntity[] findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		EmployeeEntity[] result = EmployeeRepository.employeeList;
+		return result;
 	}
 
 	@Override

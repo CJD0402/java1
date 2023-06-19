@@ -1,5 +1,7 @@
 package basicPractice.hr.dto;
 
+import basicPractice.hr.entity.EmployeeEntity;
+
 public class GetEmployeeListResponseDto {
 
 	private String employeeNumber;
@@ -10,6 +12,15 @@ public class GetEmployeeListResponseDto {
 	private String department;
 	
 	public GetEmployeeListResponseDto() {}
+
+	public GetEmployeeListResponseDto(EmployeeEntity employeeEntity) {
+		this.employeeNumber = employeeEntity.getEmployeeNumber();
+		this.name = employeeEntity.getName();
+		this.address = employeeEntity.getAddress();
+		this.birth = employeeEntity.getBirth();
+		this.email = employeeEntity.getEmail();
+		this.department = employeeEntity.getDepartment();
+	}
 
 	public GetEmployeeListResponseDto(String employeeNumber, String name, String address, String birth, String email,
 			String department) {
@@ -75,4 +86,26 @@ public class GetEmployeeListResponseDto {
 				+ ", birth=" + birth + ", email=" + email + ", department=" + department + "]";
 	}
 	
+	public static GetEmployeeListResponseDto[] copyList(EmployeeEntity[] employeeEntityList) {
+		int size = 0;
+		for (; size < employeeEntityList.length; size++) {
+			if (employeeEntityList[size] == null) break;
+		}
+		
+		GetEmployeeListResponseDto[] result = new GetEmployeeListResponseDto[size];
+		
+		for (int index = 0; index < result.length; index++) {
+			EmployeeEntity employeeEntity = employeeEntityList[index];
+			
+			GetEmployeeListResponseDto item = new GetEmployeeListResponseDto(employeeEntity);
+			result[index] = item;
+		}
+		
+		return result;
+		
+	}
+	
 }
+
+
+

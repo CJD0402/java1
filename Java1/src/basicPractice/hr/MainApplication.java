@@ -32,12 +32,17 @@ public class MainApplication {
 	
 	public static void main(String[] args) {
 		
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.print("작업 : ");
+		String method = scanner.nextLine();
+		
 		EmployeeRepository employeeRepository = new EmployeeRepositoryImplement();
 		MainService mainService = new MainServiceImplement(employeeRepository);
 		mainController = new MainControllerImplement(mainService);
 		
-		postEmployee();
-		getEmployeeList();
+		if (method.equals("POST /employee")) postEmployee();
+		if (method.equals("GET /employee/list")) getEmployeeList();
 		
 	}
 	
