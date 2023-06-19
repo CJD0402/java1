@@ -17,6 +17,15 @@ public class EmployeeRepositoryImplement implements EmployeeRepository {
 				result = true;
 				break;
 			}
+			
+			EmployeeEntity item = list[index];
+			boolean isEqualEmployeeNumber = 
+					item.getEmployeeNumber().equals(employeeEntity.getEmployeeNumber());
+			if (isEqualEmployeeNumber) {
+				list[index] = employeeEntity;
+				result = true;
+				break;
+			}
 		}
 		
 		return result;

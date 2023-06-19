@@ -44,8 +44,17 @@ public class MainServiceImplement implements MainService {
 
 	@Override
 	public boolean patchEmployee(PatchEmployeeRequestDto dto) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean result = false;
+		
+		String employeeNumber = dto.getEmployeeNumber();
+		// 입력한 사번에 대한 사원이 존재하는지
+		EmployeeEntity employeeEntity = employeeRepository.findByEmployeeNumber(employeeNumber);
+		if (employeeEntity == null) return result;
+		
+		employeeEntity = new EmployeeEntity(dto);
+		
+		result = employeeRepository.save(employeeEntity);
+		return result;
 	}
 
 	@Override

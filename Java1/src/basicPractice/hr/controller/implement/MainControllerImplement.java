@@ -62,8 +62,17 @@ public class MainControllerImplement implements MainController {
 
 	@Override
 	public void patchEmployee(PatchEmployeeRequestDto dto) {
-		// TODO Auto-generated method stub
-
+		boolean validated = dto.isValidate();
+		if (!validated) {
+			System.out.println("모든 값을 입력해주세요.");
+			return;
+		}
+		
+		boolean result = mainService.patchEmployee(dto);
+		
+		String resultMessage = result ? "수정에 성공했습니다." : "수정에 실패했습니다.";
+		System.out.println(resultMessage);
+		
 	}
 
 	@Override

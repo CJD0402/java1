@@ -49,6 +49,7 @@ public class MainApplication {
 			if (method.equals("POST /employee")) postEmployee();
 			if (method.equals("GET /employee/list")) getEmployeeList();
 			if (method.equals("GET /employee")) getEmployee();
+			if (method.equals("PATCH /employee")) patchEmployee();
 			
 		}
 		

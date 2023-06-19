@@ -65,4 +65,21 @@ public class PatchEmployeeRequestDto {
 				+ ", birth=" + birth + ", email=" + email + ", department=" + department + "]";
 	}
 	
+	public boolean isValidate() {
+		boolean result = 
+				this.employeeNumber != null && !this.employeeNumber.isBlank() &&
+				this.name != null && !this.name.isBlank() &&
+				this.address != null && !this.address.isBlank() &&
+				this.birth != null && !this.birth.isBlank() &&
+				this.email != null && !this.email.isBlank() &&
+				this.department != null && !this.department.isBlank();
+		return result;
+	}
+	
 }
+
+
+
+
+
+
