@@ -40,15 +40,17 @@ public class EmployeeRepositoryImplement implements EmployeeRepository {
 		for (int index = 0; index < list.length; index++) {
 			
 			boolean isLastIndex = index == list.length - 1;
+			
+			if (list[index] == employeeEntity) {
+				found = true;
+				result = true;
+			}
+			
 			if (found && isLastIndex) {
 				list[index] = null;
 				break;
 			}
 			
-			if (list[index] == employeeEntity) { 
-				found = true;
-				result = true;
-			}
 			if (found) list[index] = list[index + 1];
 			
 		}
