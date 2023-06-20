@@ -9,15 +9,16 @@
     <fullyQualifiedTypeName name="com.jihoon.demo.repository.Repository"/>
     <fullyQualifiedTypeName name="basicPractice.hr.dto.CreateEmplyeeRequestDto"/>
     <fullyQualifiedTypeName name="basicPractice.hr.dto.PatchEmplyeeRequestDto"/>
-    <fullyQualifiedTypeName name="basicPractice.hr.dto.GetEmployeeListResponseDto"/>
-    <fullyQualifiedTypeName name="basicPractice.hr.dto.GetEmployeeResponseDto"/>
     <fullyQualifiedTypeName name="basicPractice.hr.controller.MainController"/>
-    <fullyQualifiedTypeName name="basicPractice.hr.entity.EmployeeEntity"/>
     <fullyQualifiedTypeName name="basicPractice.hr.service.MainService"/>
     <fullyQualifiedTypeName name="basicPractice.hr.service.implement.MainServiceImplement"/>
     <fullyQualifiedTypeName name="basicPractice.hr.controller.implement.MainControllerImplement"/>
     <fullyQualifiedTypeName name="basicPractice.hr.repository.implement.EmployeeRepositoryImplement"/>
-    <fullyQualifiedTypeName name="basicPractice.hr.repository.EmployeeRepository"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="basicPractice.hr.dto.PostEmployeeRequestDto"/>
+    <fullyQualifiedTypeName name="basicPractice.hr.dto.GetEmployeeListResponseDto"/>
+    <fullyQualifiedTypeName name="basicPractice.hr.repository.EmployeeRepository"/>
+    <fullyQualifiedTypeName name="basicPractice.hr.dto.GetEmployeeResponseDto"/>
+    <fullyQualifiedTypeName name="basicPractice.hr.entity.EmployeeEntity"/>
+    <fullyQualifiedTypeName name="basicPractice.hr.dto.PatchEmployeeRequestDto"/>
 </qualifiedTypeNameHistroy>

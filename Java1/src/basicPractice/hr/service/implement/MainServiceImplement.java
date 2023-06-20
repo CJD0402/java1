@@ -59,8 +59,19 @@ public class MainServiceImplement implements MainService {
 
 	@Override
 	public boolean deleteEmployee(String employeeNumber) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean result = false;
+		
+		EmployeeEntity employeeEntity = employeeRepository.findByEmployeeNumber(employeeNumber);
+		if (employeeEntity == null) return result;
+		
+		result = employeeRepository.delete(employeeEntity);
+		return result;
 	}
 
 }
+
+
+
+
+
+

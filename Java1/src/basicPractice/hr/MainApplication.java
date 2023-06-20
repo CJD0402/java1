@@ -50,6 +50,7 @@ public class MainApplication {
 			if (method.equals("GET /employee/list")) getEmployeeList();
 			if (method.equals("GET /employee")) getEmployee();
 			if (method.equals("PATCH /employee")) patchEmployee();
+			if (method.equals("DELETE /employee")) deleteEmployee();
 			
 		}
 		
@@ -124,7 +125,20 @@ public class MainApplication {
 		
 	}
 
+	private static void deleteEmployee() {
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("사번 : ");
+		String employeeNumber = scanner.nextLine();
+		
+		mainController.deleteEmployee(employeeNumber);
+		
+	}
+	
 }
+
+
+
 
 
 

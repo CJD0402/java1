@@ -30,12 +30,44 @@ public class EmployeeRepositoryImplement implements EmployeeRepository {
 		
 		return result;
 	}
-
+	
 	@Override
 	public boolean delete(EmployeeEntity employeeEntity) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean result = false;
+		EmployeeEntity[] list = EmployeeRepository.employeeList;
+		
+		boolean found = false;
+		for (int index = 0; index < list.length; index++) {
+			
+			boolean isLastIndex = index == list.length - 1;
+			if (found && isLastIndex) {
+				list[index] = null;
+				break;
+			}
+			
+			if (list[index] == employeeEntity) { 
+				found = true;
+				result = true;
+			}
+			if (found) list[index] = list[index + 1];
+			
+		}
+		
+		return result;
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	@Override
 	public EmployeeEntity[] findAll() {

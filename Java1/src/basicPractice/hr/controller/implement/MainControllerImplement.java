@@ -77,8 +77,20 @@ public class MainControllerImplement implements MainController {
 
 	@Override
 	public void deleteEmployee(String employeeNumber) {
-		// TODO Auto-generated method stub
-
+		boolean validated = employeeNumber !=  null && !employeeNumber.isBlank();
+		if (!validated) {
+			System.out.println("사번을 입력해주세요.");
+			return;
+		}
+		
+		boolean result = mainService.deleteEmployee(employeeNumber);
+		String resultMessage = result ? "삭제에 성공했습니다." : "삭제에 실패했습니다.";
+		System.out.println(resultMessage);
 	}
 
 }
+
+
+
+
+
