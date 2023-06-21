@@ -36,8 +36,6 @@ public class WrapperClass {
 		// 숫자형태로 되어있는 데이터를 문자열로 변형해서 저장 혹은 출력할 때 자주 사용됨
 		int stringInt = 10000;
 		String intString = Integer.toString(stringInt);
-	
-		
 		
 	}
 
