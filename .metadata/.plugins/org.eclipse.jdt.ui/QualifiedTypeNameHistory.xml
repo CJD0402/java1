@@ -14,11 +14,14 @@
     <fullyQualifiedTypeName name="basicPractice.hr.service.implement.MainServiceImplement"/>
     <fullyQualifiedTypeName name="basicPractice.hr.controller.implement.MainControllerImplement"/>
     <fullyQualifiedTypeName name="basicPractice.hr.repository.implement.EmployeeRepositoryImplement"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="basicPractice.hr.dto.PostEmployeeRequestDto"/>
     <fullyQualifiedTypeName name="basicPractice.hr.dto.GetEmployeeListResponseDto"/>
     <fullyQualifiedTypeName name="basicPractice.hr.repository.EmployeeRepository"/>
     <fullyQualifiedTypeName name="basicPractice.hr.dto.GetEmployeeResponseDto"/>
     <fullyQualifiedTypeName name="basicPractice.hr.entity.EmployeeEntity"/>
     <fullyQualifiedTypeName name="basicPractice.hr.dto.PatchEmployeeRequestDto"/>
+    <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
+    <fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
 </qualifiedTypeNameHistroy>
