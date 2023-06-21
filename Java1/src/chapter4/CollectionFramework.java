@@ -1,8 +1,12 @@
 package chapter4;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 // Collection Framework
 // 데이터를 저장, 검색, 수정, 삭제 표준화된 데이터 구조를 제공하는 인터페이스 및 그 구현체들
@@ -60,10 +64,70 @@ public class CollectionFramework {
 		
 		System.out.println(arrayList.size());
 		
+		System.out.println("==============================");
+		
 		// 2. Set Interface
 		// 순서가 존재하지 않고 중복을 허용하지 않는 데이터 구조
+		// 집합 개념
 		
+		// 구현체 : HashSet, LinkedHashSet, TreeSet
+		// HashSet : 해싱을 사용해서 데이터를 관리 - 검색속도가 빠름
+		// LinkedHashSet : 해싱을 사용해서 데이터를 순서대로 관리
+		// TreeSet : Tree기법을 사용해서 데이터를 관리 - 데이터가 정렬되어 있음
+		Set<Integer> intSet = new HashSet<>();
 		
+		// Set Interface의 메서드 : add(), remove(), contains()
+		// add() : 추가
+		// remove() : 삭제
+		// contains() : 포함여부 확인
+		intSet.add(10);
+		intSet.add(2);
+		intSet.add(10);
+		intSet.add(3);
+		intSet.add(3);
+		intSet.add(4);
+		intSet.add(5);
+		intSet.add(5);
+		
+		intSet.remove(10);
+		System.out.println(intSet.size());
+		
+		boolean hasTen = intSet.contains(2);
+		System.out.println(hasTen);
+		
+		for (Integer integer: intSet) {
+			System.out.println(integer);
+		}
+		
+		System.out.println("==============================");
+		
+		// 3. Map Interface
+		// 순서가 존재하지 않고 key와 value가 한 쌍으로 관리되며 key에 대해서 
+		// 중복을 허용하지 않는 데이터 구조
+		// key와 value의 집합
+		
+		// 구현체 : HashMap, LinkedHashMap, TreeMap
+		// HashMap : 해싱을 사용하여 key와 value를 저장 - key에 대한 접근이 빠름
+		// LinkedHashMap : 추가한 순서대로 데이터를 관리
+		// TreeMap : Tree기법을 사용하여 Key를 정렬하여 관리
+		Map<String, String> stringMap = new HashMap<>();
+		
+		// Map Interface의 메서드 : put(), get(), remove(), containsKey()
+		// put() : 추가, 수정
+		// get() : 검색
+		// remove() : 제거
+		// containsKey() : key의 존재 여부 확인
+		stringMap.put("사과", "apple");
+		stringMap.put("바나나", "banana");
+		stringMap.put("사과", "apple1");
+		
+		stringMap.remove("사과");
+		
+		String value1 = stringMap.get("사과");
+		System.out.println(value1);
+		boolean hasApple = stringMap.containsKey("사과");
+		System.out.println(hasApple);
+	
 	}
 
 }
