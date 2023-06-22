@@ -1,5 +1,7 @@
 package basicPractice.hr.controller.implement;
 
+import java.util.List;
+
 import basicPractice.hr.controller.MainController;
 import basicPractice.hr.dto.GetEmployeeListResponseDto;
 import basicPractice.hr.dto.GetEmployeeResponseDto;
@@ -38,7 +40,7 @@ public class MainControllerImplement implements MainController {
 	@Override
 	public void getEmployeeList() {
 		
-		GetEmployeeListResponseDto[] result = mainService.getEmployeeList();
+		List<GetEmployeeListResponseDto> result = mainService.getEmployeeList();
 		
 		for (GetEmployeeListResponseDto item: result) System.out.println(item.toString());
 		

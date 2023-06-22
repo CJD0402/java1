@@ -1,5 +1,7 @@
 package basicPractice.hr.service.implement;
 
+import java.util.List;
+
 import basicPractice.hr.dto.GetEmployeeListResponseDto;
 import basicPractice.hr.dto.GetEmployeeResponseDto;
 import basicPractice.hr.dto.PatchEmployeeRequestDto;
@@ -25,12 +27,11 @@ public class MainServiceImplement implements MainService {
 	}
 
 	@Override
-	public GetEmployeeListResponseDto[] getEmployeeList() {
-		EmployeeEntity[] employeeEntityList = employeeRepository.findAll();
+	public List<GetEmployeeListResponseDto> getEmployeeList() {
+		List<EmployeeEntity> employeeEntityList = employeeRepository.findAll();
 		
-		GetEmployeeListResponseDto[] result = GetEmployeeListResponseDto.copyList(employeeEntityList);
+		List<GetEmployeeListResponseDto> result = GetEmployeeListResponseDto.copyList(employeeEntityList);
 		return result;
-		
 	}
 
 	@Override

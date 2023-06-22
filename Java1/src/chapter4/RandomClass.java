@@ -1,7 +1,6 @@
 package chapter4;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
@@ -76,6 +75,8 @@ public class RandomClass {
 		
 		for (int number: lotto) System.out.print(number + " ");
 		System.out.println("");
+		
+		lotto.stream().forEach(number -> System.out.print(number + " "));
 		
 	}
 

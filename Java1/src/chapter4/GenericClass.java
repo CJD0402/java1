@@ -1,5 +1,10 @@
 package chapter4;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Set;
+
 // Generic
 // 클래스나 메서드에서 사용할 데이터 타입을 내부에서 지정하는 것이 아니라
 // 외부에서 지정하도록 하는 기능
@@ -46,7 +51,7 @@ class PersonalInfo5 {
 class PersonalInfo<W, H> {
 	String name;
 	int age;
-	private W weight;
+	W weight;
 	H height;
 	
 	void setWeight(W weight) {
@@ -56,10 +61,35 @@ class PersonalInfo<W, H> {
 	W getWeight() {
 		return this.weight;
 	}
+	
+}
+
+// Generic Method
+// 메서드에서 사용할 타입을 메서드 외부에서 받아오는 메서드
+// 선언 방법:
+// 제어자 <매개타입> 반환타입 메서드명(매개변수) { ... }
+class Person {
+	@Deprecated
+	static <T> void method(T args) {
+		
+	}
+}
+
+// 타입 매개변수의 제한
+// 기본적으로 타입 매개변수는 모든 참조 타입을 받을 수 있지만
+// 타입 매개변수에 제한을 걸어서도 사용할 수 있음
+// 이때 extends 키워드를 이용하여 해당 클래스 혹은 인터페이스를 확장 또는 구현한
+// 클래스, 인터페이스만 받도록 할 수 있음
+class Student<S extends Collection> {
+	String name;
+	String studentNumber;
+	String department;
+	S scores;
 }
 
 public class GenericClass {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		
 		// 속성의 타입을 Object로 지정하여 코드 재사용성 향상
@@ -68,11 +98,25 @@ public class GenericClass {
 		personalInfo5.height = 10.15;
 		
 //		int weight = (Integer) personalInfo5.weight;
+		
+		// 속성 타입을 Generic으로 지정하여 코드의 재사용성 향상과 코드의 안정성 확보
 		PersonalInfo<Integer, Double> personalInfo = new PersonalInfo<>();
-		personalInfo.weight = 10;
-		int weight = personalInfo.weight;
+//		personalInfo.weight = 10;
+//		int weight = personalInfo.weight;
+		
+		// Generic 메서드를 사용하여 어떠한 타입의 매개변수도 받을 수 있도록 지정
+		Person.method("String");
+		Person.method(1);
+		
+		// 제한된 타입 매개변수를 사용하여 타입 매개변수의 상한선을 걸 수 있음
+		Student<Set<Integer>> student1 = new Student<>();
+		
+		// 와일드 카드를 이용한 Generic 사용
+		PersonalInfo<? extends Object, Integer> personalInfoWild = new PersonalInfo<>();
+		PersonalInfo<? super ArrayList, Integer> personalInfoWild2 = new PersonalInfo<>();
 		
 	}
+	
 
 }
 

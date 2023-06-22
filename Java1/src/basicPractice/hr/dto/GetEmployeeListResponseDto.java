@@ -1,5 +1,8 @@
 package basicPractice.hr.dto;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import basicPractice.hr.entity.EmployeeEntity;
 
 public class GetEmployeeListResponseDto {
@@ -85,6 +88,26 @@ public class GetEmployeeListResponseDto {
 		return "GetEmployeeListResponseDto [employeeNumber=" + employeeNumber + ", name=" + name + ", address=" + address
 				+ ", birth=" + birth + ", email=" + email + ", department=" + department + "]";
 	}
+	
+	
+	
+	
+	public static List<GetEmployeeListResponseDto> copyList(List<EmployeeEntity> employeeEntityList) {
+		List<GetEmployeeListResponseDto> result = new ArrayList<>();
+		for (EmployeeEntity employeeEntity: employeeEntityList) {
+			GetEmployeeListResponseDto dto = new GetEmployeeListResponseDto(employeeEntity);
+			result.add(dto);
+		}
+		return result;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	public static GetEmployeeListResponseDto[] copyList(EmployeeEntity[] employeeEntityList) {
 		int size = 0;
