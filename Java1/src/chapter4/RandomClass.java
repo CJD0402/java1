@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.UUID;
 
 // Random Class
@@ -42,15 +43,39 @@ public class RandomClass {
 		String uuid = UUID.randomUUID().toString();
 		System.out.println(uuid);
 		
+		System.out.println("==============================");
+		
 		// 연금복권 추첨
 		// 1~5조 0~9까지의 중복을 허용한 수 6개
 		// 1 0 1 8 8 3 2
+		Random random = new Random();
+		
 		List<Integer> annuity = new ArrayList<>();
+		for (int count = 0; count < 7; count++) {
+			if (count == 0) {
+				int jo = random.nextInt(5) + 1;
+				annuity.add(jo);
+				continue;
+			}
+			
+			int number = random.nextInt(10);
+			annuity.add(number);
+		}
+		
+		for (int number: annuity) System.out.print(number + " ");
+		System.out.println("");
 		
 		// 로또 추첨
 		// 중복을 허용하지 않은 1~45까지의 수 6개
 		// 4 8 20 21 43 45
-		Set<Integer> lotto  = new HashSet<>();
+		Set<Integer> lotto  = new TreeSet<>();
+		while (lotto.size() < 6) {
+			int number = random.nextInt(45) + 1;
+			lotto.add(number);
+		}
+		
+		for (int number: lotto) System.out.print(number + " ");
+		System.out.println("");
 		
 	}
 
